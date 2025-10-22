@@ -1,20 +1,23 @@
 package entities;
 
 import java.time.LocalDate;
-import java.util.Date;
+import java.time.YearMonth;
 
 public class HourContract {
-    private LocalDate moment;
+    private YearMonth moment;
     private Double valuePerHour;
     private Integer hour;
 
-    public HourContract(LocalDate moment, Double valuePerHour, Integer hour){
+    public HourContract(){
+    }
+
+    public HourContract(YearMonth moment, Double valuePerHour, Integer hour){
         this.moment = moment;
         this.valuePerHour = valuePerHour;
         this.hour = hour;
     }
 
-    public LocalDate getMoment(){
+    public YearMonth getMoment(){
         return moment;
     }
     public Double getValuePerHour(){
@@ -23,7 +26,7 @@ public class HourContract {
     public Integer getHour(){
         return hour;
     }
-    public void setMoment(LocalDate moment){
+    public void setMoment(YearMonth moment){
         this.moment = moment;
     }
     public void setValuePerHour(Double valuePerHour){
@@ -32,7 +35,6 @@ public class HourContract {
     public void setHour(Integer hour){
         this.hour = hour;
     }
-
 
     public Double totalValue(){
         return valuePerHour * hour;
